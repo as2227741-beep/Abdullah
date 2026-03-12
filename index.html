@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio — Abdullah</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Syne:wght@400;700;800&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="loading">
+
+<!-- ── LOADER ── -->
+<div id="loader">
+  <canvas id="loader-canvas"></canvas>
+  <div class="loader-curtain"></div>
+  <div class="loader-bg-lines" id="loaderLines"></div>
+
+  <div class="loader-content">
+    <!-- Ring -->
+    <div class="loader-ring-wrap">
+      <svg width="110" height="110" viewBox="0 0 110 110">
+        <!-- tick marks -->
+        <g id="ringTicks"></g>
+        <circle class="ring-track" cx="55" cy="55" r="40"/>
+        <circle class="ring-progress" id="ringProgress" cx="55" cy="55" r="40"/>
+        <!-- center text -->
+        <text x="55" y="60" text-anchor="middle"
+          font-family="JetBrains Mono, monospace"
+          font-size="13" fill="#1a56db" id="ringText">0%</text>
+      </svg>
+    </div>
+
+    <!-- Logo -->
+    <div class="loader-logo">Abdullah<span>.<br></span>Developer</div>
+
+    <!-- Bar -->
+    <div class="loader-bar-wrap">
+      <div class="loader-meta">
+        <span class="loader-label" id="loaderPhase">Initializing</span>
+        <span class="loader-pct" id="loaderNum">0%</span>
+      </div>
+      <div class="loader-bar-track">
+        <div class="loader-bar-fill" id="loaderBar"></div>
+      </div>
+    </div>
+  </div>
+</div> 
+
+<!-- Cursor -->
+<div id="cursor-dot"></div>
+<div id="cursor-ring"></div>
+
+<!-- Canvas Background -->
+<canvas id="bg-canvas"></canvas>
+
+<!-- Nav -->
+<nav id="navbar">
+  <!-- Logo -->
+  <a href="#hero" class="nav-logo">
+    <div class="nav-logo-mark"><span>AD</span></div>
+    <div class="nav-logo-text">Abdullah <em>Developer</em></div>
+    
+  </a>
+
+  <!-- Center pill links -->
+  <div class="nav-center">
+    <div class="nav-pill" id="navPill">
+      <div class="nav-pill-bg" id="pillBg"></div>
+      <a href="#about"    data-section="about"><span>About</span></a>
+      <a href="#skills"   data-section="skills"><span>Skills</span></a>
+      <a href="#projects" data-section="projects"><span>Work</span></a>
+      <a href="#contact"  data-section="contact"><span>Contact</span></a>
+    </div>
+  </div>
+
+  <!-- Right -->
+  <div class="nav-right">
+    <div class="nav-avail">
+      <span class="avail-dot"></span>
+      Available
+    </div>
+    <a href="#contact" class="nav-cta"><span>Hire Me</span></a>
+  </div>
+
+  <!-- Mobile hamburger -->
+  <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+
+  <!-- Scroll progress -->
+  <div class="nav-progress" id="navProgress"></div>
+</nav>
+
+<!-- Mobile Drawer -->
+<div class="nav-drawer" id="navDrawer">
+  <ul class="drawer-links">
+    <li><a href="#about"    onclick="closeDrawer()">About <em>01</em></a></li>
+    <li><a href="#skills"   onclick="closeDrawer()">Skills <em>02</em></a></li>
+    <li><a href="#projects" onclick="closeDrawer()">Work <em>03</em></a></li>
+    <li><a href="#contact"  onclick="closeDrawer()">Contact <em>04</em></a></li>
+  </ul>
+  <div class="drawer-footer">
+    <a href="https://www.instagram.com/prince_abdullah.20/">Instagram</a>
+    <a href="https://github.com/as2227741-beep">GitHub</a>
+    <a href="https://www.linkedin.com/in/abdullah-developer-64b5543b5/">LinkedIn</a>
+  </div>
+</div>
+
+<main data-scroll data-scroll-speed="0.5">
+  <!-- Hero -->
+  <section id="hero">
+    <div class="hero-content">
+      <div class="hero-tag">Available for work · 2026</div>
+      <h1 class="hero-name">
+        Abdullah<br>
+        <em>Developer</em>
+      </h1>
+      <div class="hero-sub">
+        <p>Creative developer & designer crafting digital experiences that blur the line between art and interaction.</p>
+        <a href="#projects" class="hero-cta">
+          <span>View Work</span>
+          <span>→</span>
+        </a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <div class="scroll-line"></div>
+      Scroll
+    </div>
+  </section>
+
+  <!-- Marquee -->
+  <div class="marquee-wrap">
+    <div class="marquee-track">
+      <div class="marquee-item">Design <span>✦</span></div>
+      <div class="marquee-item">Development <span>✦</span></div>
+      <div class="marquee-item">Motion <span>✦</span></div>
+      <div class="marquee-item">Branding <span>✦</span></div>
+      <div class="marquee-item">UI / UX <span>✦</span></div>
+      <div class="marquee-item">Creative Direction <span>✦</span></div>
+      <div class="marquee-item">Digital Art <span>✦</span></div>
+      <div class="marquee-item">WebGL <span>✦</span></div>
+      <div class="marquee-item">Design <span>✦</span></div>
+      <div class="marquee-item">Development <span>✦</span></div>
+      <div class="marquee-item">Motion <span>✦</span></div>
+      <div class="marquee-item">Branding <span>✦</span></div>
+      <div class="marquee-item">UI / UX <span>✦</span></div>
+      <div class="marquee-item">Creative Direction <span>✦</span></div>
+      <div class="marquee-item">Digital Art <span>✦</span></div>
+      <div class="marquee-item">WebGL <span>✦</span></div>
+    </div>
+  </div>
+
+  <!-- About -->
+  <section id="about">
+    <div class="reveal">
+      <div class="about-label">About</div>
+      <h2 class="about-title">
+        Crafting the<br>
+        <em>Unexpected</em>
+      </h2>
+    </div>
+    <div class="reveal" style="transition-delay:0.15s">
+      <div class="about-body">
+        <p>I'm a multidisciplinary creative developer based in New York, obsessed with the intersection of design and technology. I build experiences that feel alive — interfaces that respond, breathe, and leave an impression.</p>
+        <p>With a background spanning fine arts, computer science, and visual communication, I bring an unusual perspective to digital craft: one that values both the precision of code and the intuition of design.</p>
+      </div>
+      <div class="about-stats">
+        <div class="stat-cell">
+          <span class="stat-num">3+</span>
+          <div class="stat-label">Years Experience</div>
+        </div>
+        <div class="stat-cell">
+          <span class="stat-num">10+</span>
+          <div class="stat-label">Projects Shipped</div>
+        </div>
+        <div class="stat-cell">
+          <span class="stat-num">15+</span>
+          <div class="stat-label">Happy Clients</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills">
+    <div class="skills-header reveal">
+      <div>
+        <div class="section-label" data-num="02">Capabilities</div>
+        <h2 class="section-title">What I Do</h2>
+      </div>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-card reveal">
+        <div class="skill-icon">⬡</div>
+        <div class="skill-name">UI / UX Design</div>
+        <p style="font-family: var(--font-serif); font-size:0.95rem; color:var(--muted); line-height:1.6; margin-top:8px;">Research-driven interfaces with meticulous attention to form and function.</p>
+        <div class="skill-tags">
+          <span class="tag">Figma</span>
+        </div>
+      </div>
+      <div class="skill-card reveal" style="transition-delay:0.1s">
+        <div class="skill-icon">◈</div>
+        <div class="skill-name">Frontend Dev</div>
+        <p style="font-family: var(--font-serif); font-size:0.95rem; color:var(--muted); line-height:1.6; margin-top:8px;">High-performance, accessible web applications built with modern tooling.</p>
+        <div class="skill-tags">
+          <span class="tag">React</span>
+          <span class="tag">Javascript</span>
+        </div>
+      </div>
+      <div class="skill-card reveal" style="transition-delay:0.2s">
+        <div class="skill-icon">◉</div>
+        <div class="skill-name">Motion Design</div>
+        <p style="font-family: var(--font-serif); font-size:0.95rem; color:var(--muted); line-height:1.6; margin-top:8px;">Purposeful animation that guides attention and creates delight.</p>
+        <div class="skill-tags">
+          <span class="tag">GSAP</span>
+          <span class="tag">Framer</span>
+          <span class="tag">CSS</span>
+          <span class="tag">Tailwind CSS</span>
+        </div>
+      </div>
+      <div class="skill-card reveal" style="transition-delay:0.3s">
+        <div class="skill-icon">◫</div>
+        <div class="skill-name">Creative Tech</div>
+        <p style="font-family: var(--font-serif); font-size:0.95rem; color:var(--muted); line-height:1.6; margin-top:8px;">Generative art, installations, and experimental digital experiences.</p>
+        <div class="skill-tags">
+          <span class="tag">TouchDesigner</span>
+          <span class="tag">AI</span>
+        </div>
+      </div>
+      <div class="skill-card reveal" style="transition-delay:0.3s">
+        <div class="skill-icon">◫</div>
+        <div class="skill-name">Backend</div>
+        <p style="font-family: var(--font-serif); font-size:0.95rem; color:var(--muted); line-height:1.6; margin-top:8px;">Create backend work , API,s.</p>
+        <div class="skill-tags">
+          <span class="tag">Express</span>
+          <span class="tag">MongoBD</span>
+        </div>
+      </div>
+      <div class="skill-card reveal" style="transition-delay:0.3s">
+        <div class="skill-icon">◫</div>
+        <div class="skill-name">Cloud </div>
+        <p style="font-family: var(--font-serif); font-size:0.95rem; color:var(--muted); line-height:1.6; margin-top:8px;">I can do work with cloud storage</p>
+        <div class="skill-tags">
+          <span class="tag">ImageKit</span>
+          <span class="tag">Cloudinary</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects">
+    <div class="projects-header reveal">
+      <div class="section-label" data-num="03">Selected Work</div>
+      <h2 class="section-title">Projects</h2>
+    </div>
+    <div class="project-list">
+      <div class="project-item reveal">
+        <span class="proj-num">01</span>
+        <span class="proj-name">Chatbot — AI </span>
+        <span class="proj-type">Product Design</span>
+        <div class="proj-arrow">→</div>
+      </div>
+      <div class="project-item reveal" style="transition-delay:0.08s">
+        <span class="proj-num">02</span>
+        <span class="proj-name">zo - reel</span>
+        <span class="proj-type">Web Development</span>
+        <div class="proj-arrow">→</div>
+      </div>
+      <div class="project-item reveal" style="transition-delay:0.16s">
+        <span class="proj-num">03</span>
+        <span class="proj-name">Post  — Backend System</span>
+        <span class="proj-type">UI System</span>
+        <div class="proj-arrow">→</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="contact-left reveal">
+      <div class="section-label" data-num="04">Get in Touch</div>
+      <h2 class="section-title">Let's Build<br><em>Together</em></h2>
+      <p class="contact-desc">Have a project in mind? I'm always open to discussing new ideas, creative challenges, and opportunities.</p>
+      <a href="mailto:as2227741@gmail.com" class="contact-email">
+        as2227741@gmail.com →
+      </a>
+    </div>
+    <div class="contact-right reveal" style="transition-delay:0.15s">
+      <ul class="social-list">
+        <li class="social-item">
+          <a href="https://www.instagram.com/prince_abdullah.20/" class="social-link">
+            <div>
+              <div class="social-name">Instagram</div>
+              <div class="social-handle">prince_abdullah.20</div>
+            </div>
+            <span style="color:var(--muted)">↗</span>
+          </a>
+        </li>
+        <li class="social-item">
+          <a href="#" class="social-link">
+            <div>
+              <div class="social-name">GitHub</div>
+              <div class="social-handle">github.com/as2227741-beep</div>
+            </div>
+            <span style="color:var(--muted)">↗</span>
+          </a>
+        </li>
+        <li class="social-item">
+          <a href="#" class="social-link">
+            <div>
+              <div class="social-name">LinkedIn</div>
+              <div class="social-handle">in/Abdullah Developer</div>
+            </div>
+            <span style="color:var(--muted)">↗</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-copy">© 2026 Abdullah — All Rights Reserved</div>
+  <a href="#hero" class="footer-back">↑ Back to top</a>
+</footer>
+
+<script src="https://unpkg.com/lenis@1.3.18/dist/lenis.min.js"></script> 
+<script src="node.js"></script>
+</body>
+</html>
