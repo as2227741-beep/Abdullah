@@ -9,6 +9,10 @@
   scrollbar-width: none;
   user-select: none;
 }
+.project-a{
+  text-decoration: none;
+  color: black;
+}
 
 :root {
   --bg: #f5f2ec;
@@ -1349,4 +1353,19 @@ footer {
 /* Lock scroll while loading */
 body.loading {
   overflow: hidden;
+}
+
+.img-wrapper  {
+  height: 250px;
+  width: 250px;
+  position: absolute;
+  z-index: -100;
+  opacity: 0;
+  transition: all .4s;
+}
+.img-wrapper img{
+  height: 100%;
+  border-radius: 10px;
+  border: 2px solid #1a56db;
+  transform: translate(-50%,-50%);
 }

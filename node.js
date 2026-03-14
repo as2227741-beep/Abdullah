@@ -6,7 +6,7 @@ const lenis = new Lenis({
 
 // Listen for the scroll event and log the event data
 lenis.on('scroll', (e) => {
-  console.log(e);
+  // console.log(e);
 });
 
 // ── CURSOR ──
@@ -408,3 +408,46 @@ const statsObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.5 });
 const statsEl = document.querySelector('.about-stats');
 if (statsEl) statsObserver.observe(statsEl);
+
+
+//image 
+
+// const imagecontainer = document.querySelectorAll('.reveal')
+// // const image  = document.querySelector('.project-a img')
+
+// imagecontainer.forEach(val => {
+//   var image = val.childNodes[9]
+//   console.log(image)
+//   val.addEventListener('mousemove',(dets) => {
+    // image.style.left = dets.x + 'px'
+//     image.style.top = dets.y + 'px'
+//   })
+//   val.addEventListener('mouseenter',() => {
+//     image.style.opacity = 1
+//   })
+//   val.addEventListener('mouseleave',() => {
+//     image.style.opacity = 0
+//   })
+// });
+
+const imageContainer = document.querySelectorAll('.reveal ')
+
+imageContainer.forEach(val => {
+  var image = val.childNodes[9]
+  console.log(val.childNodes[9])
+
+  val.addEventListener('mousemove',(dets) => {
+    image.style.left = dets.x + 'px'
+    // image.style.top = dets.y + 'px'
+  })
+  val.addEventListener('mouseenter',() => {
+    image.style.opacity = 1
+  })
+  val.addEventListener('mouseleave',() => {
+    image.style.opacity = 0
+  })
+
+
+
+});
+
